@@ -1,6 +1,11 @@
 {
   "name": "svelte-qrcode-generator",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Cribac/svelte-qrcode-generator.git"
+  },
+  "license": "GPL-3.0-or-later",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
