@@ -1,5 +1,8 @@
 <script>
 	import QRCode from 'qrcode';
+	import Button, { Label } from '@smui/button';
+
+	let clicked = 0;
 
 	let data = {
 		name: "Fooberto Testino",
@@ -22,3 +25,7 @@
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
 <img alt="QR Code" src="{qrImage}" />
+
+<Button on:click={() => clicked++}>
+	<Label>Default</Label>
+</Button>
