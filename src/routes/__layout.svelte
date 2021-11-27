@@ -1,11 +1,17 @@
 <script lang="ts">
-	import Navbar from '../components/Navbar.svelte';
+	import OffCanvasMenu from '../components/OffCanvasMenu.svelte';
 </script>
 
 <header>
-	<Navbar />
+  <OffCanvasMenu />
 </header>
 
 <main>
 	<slot />
 </main>
+
+<style>
+  header {
+		background: #247D9E;
+	}
+</style>
