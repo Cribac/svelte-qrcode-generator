@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '../styles/tailwind.css';
 	import OffCanvasMenu from '../components/OffCanvasMenu.svelte';
 </script>
 
@@ -9,9 +10,3 @@
 <main>
 	<slot />
 </main>
-
-<style>
-  header {
-		background: #247D9E;
-	}
-</style>
