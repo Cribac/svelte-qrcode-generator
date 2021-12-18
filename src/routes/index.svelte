@@ -1,9 +1,5 @@
 <script>
 	import QRCode from 'qrcode';
-	import Button, { Icon, Label } from '@smui/button';
-	import Textfield from '@smui/textfield';
-	import HelperText from '@smui/textfield/helper-text/index';
-	import IconButton from '@smui/icon-button';
 
 	const generateCode = true;
 	let dataSet = [];
@@ -42,30 +38,4 @@
 	{:catch error}
 		<p style="color: red">{error.message}</p>
 	{/await}
-{/if}
-
-<Button color="primary" variant="unelevated" on:click={addEmptyDataSet}>
-	<Label>Add Data</Label>
-	<Icon class="material-icons">add</Icon>
-</Button>
-
-{#if dataSet.length > 0}
-	{#each dataSet as ds}
-		<div>
-			<Textfield bind:value={ds.label} label="Label">
-				<HelperText slot="helper">Add Label</HelperText>
-			</Textfield>
-		</div>
-
-		:
-		<div>
-			<Textfield bind:value={ds.data} label="Label">
-				<HelperText slot="helper">Add Data</HelperText>
-			</Textfield>
-		</div>
-		<div style="display: flex; align-items: center;">
-			<IconButton class="material-icons" on:click={addDataSet(ds.label, ds.data)}>save</IconButton>
-		</div>
-		<pre>{ds.label}:{ds.data}</pre>
-	{/each}
 {/if}

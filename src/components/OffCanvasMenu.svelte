@@ -6,6 +6,7 @@
 	</label>
 	<div class="sidebar">
 		<ul>
+			<li><a href="/generators/text">Textinput</a></li>
 			<a href="#"><li><i class="fa fa-tachometer"></i>Dashboard</li></a>
 			<a href="#"><li><i class="fa fa-lightbulb-o"></i>Widgets</li></a>
 			<a href="#" class="active"><li><i class="fa fa-line-chart"></i>Charts</li></a>
