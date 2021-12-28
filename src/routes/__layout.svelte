@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../styles/tailwind.css';
-	import OffCanvasMenu from '../components/OffCanvasMenu.svelte';
+	import OffCanvasMenu from '../components/navigation/OffCanvasMenu.svelte';
 </script>
 
 <header>
