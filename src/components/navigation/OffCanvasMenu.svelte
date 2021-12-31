@@ -3,13 +3,13 @@
 	import { routes } from '../../routes/routes';
 </script>
 
-<aside>
+<aside class="bg-tundra">
 	<input type="checkbox" id="menu-toggle">
-	<label class="btn bg-tundra text-white" for="menu-toggle" data-testid="sidebar">
+	<label class="btn flex items-center text-white" for="menu-toggle" data-testid="sidebar">
 		<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
 		</svg>
-		<span class="">Menu</span>
+		<span>Menu</span>
 	</label>
 	<div class="sidebar bg-midnight fixed">
 		<ul>
