@@ -1,9 +1,6 @@
 <script lang="ts" type="module">
 	import OffCanvasMenuItem from './OffCanvasMenuItem.svelte';
-
-	const routes = [
-		{ path: '/generators/text', text: 'Textinput' },
-	];
+	import { routes } from '../../routes/routes';
 </script>
 
 <aside>
