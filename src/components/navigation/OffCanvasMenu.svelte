@@ -1,4 +1,4 @@
-<script lang="ts" type="module">
+<script lang="ts">
 	import OffCanvasMenuItem from './OffCanvasMenuItem.svelte';
 	import { routes } from '../../routes/routes';
 </script>

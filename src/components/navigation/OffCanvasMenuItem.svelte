@@ -1,4 +1,4 @@
-<script lang="ts" type="module">
+<script lang="ts">
 	import { page } from "$app/stores";
 
 	export let route;
