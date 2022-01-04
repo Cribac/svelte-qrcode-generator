@@ -7,6 +7,6 @@
   <OffCanvasMenu />
 </header>
 
-<main>
+<main class="mx-auto w-5/6 sm:w-4/5">
 	<slot />
 </main>
