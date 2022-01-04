@@ -1,6 +1,6 @@
 /// <reference types="@sveltejs/kit" />
 
-interface Route {
+type Route = {
 	path: string
 	text: string
 }
