@@ -1,5 +1,6 @@
 <script>
 	import LoadingIndicator from '../../components/LoadingIndicator.svelte';
+	import ActionButton from '../../components/ui/ActionButton.svelte';
 	import QRCode from 'qrcode';
 
 	let text = '';
@@ -12,6 +13,18 @@
 		stringdata = JSON.stringify(text);
 		generateOk = true;
 		text = '';
+	}
+
+	function handleDownload() {
+		console.log('tbd handleDownload');
+	}
+
+	function handleShare() {
+		console.log('tbd handleShare');
+	}
+
+	function handleRestart() {
+		console.log('tbd handleRestart');
 	}
 
 	async function generateQr(text) {
@@ -32,16 +45,11 @@
 	></textarea>
 
 	{#if text.length > 0}
-		<button
-			type="button"
-			on:click={handleGenerate}
-		>
-			Generate QRCode
-		</button>
+		<ActionButton action={handleGenerate} buttonText="Generate QRCode" />
 	{/if}
 
-	<div class="flex mt-4 h-64 w-64">
-		{#if generateOk && text.length === 0}
+	{#if generateOk && text.length === 0}
+		<div class="flex mt-4 h-64 w-64">
 			{#await generateQr(stringdata)}
 				<LoadingIndicator text="generating..."/>
 			{:then dataString}
@@ -49,6 +57,13 @@
 			{:catch error}
 				<p style="color: red">{error.message}</p>
 			{/await}
-		{/if}
-	</div>
+		</div>
+
+		<div>
+			<ActionButton action={handleDownload} buttonText="Download" />
+			<ActionButton action={handleShare} buttonText="Share" />
+			<ActionButton action={handleRestart} buttonText="Restart" />
+		</div>
+	{/if}
+
 </div>
