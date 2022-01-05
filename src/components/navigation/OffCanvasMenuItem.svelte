@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	export let route;
 	export let isActive = false;
 </script>
