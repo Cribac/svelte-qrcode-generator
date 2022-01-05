@@ -31,7 +31,7 @@
 	}
 
 	async function generateQr(text) {
-		return QRCode.toDataURL(texto);
+		return QRCode.toDataURL(text);
 	}
 </script>
 
