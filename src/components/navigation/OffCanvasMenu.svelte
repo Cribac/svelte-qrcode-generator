@@ -1,7 +1,8 @@
 <script lang="ts">
 	import OffCanvasMenuItem from './OffCanvasMenuItem.svelte';
 	import { routes } from '../../routes/routes';
-	import { page } from "$app/stores";
+	import { page } from '$app/stores';
+
 	/**
 	 * Flag to determine if the menu is toggled or not.
 	 *
