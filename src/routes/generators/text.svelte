@@ -2,6 +2,7 @@
 	import LoadingIndicator from '../../components/LoadingIndicator.svelte';
 	import ActionButton from '../../components/ui/ActionButton.svelte';
 	import QRCode from 'qrcode';
+	import Alert from '../../components/Alert.svelte';
 
 	let text = '';
 
@@ -24,11 +25,13 @@
 	}
 
 	function handleRestart() {
-		console.log('tbd handleRestart');
+		text = '';
+		stringdata = '';
+		generateOk = false;
 	}
 
 	async function generateQr(text) {
-		return QRCode.toDataURL(text);
+		return QRCode.toDataURL(texto);
 	}
 </script>
 
@@ -53,13 +56,13 @@
 	{/if}
 
 	{#if generateOk && text.length === 0}
-		<div class="flex mt-4 h-64 w-64">
+		<div class="flex mt-4">
 			{#await generateQr(stringdata)}
 				<LoadingIndicator text="generating..."/>
 			{:then dataString}
-				<img alt="QR Code" src="{dataString}" />
+				<img class="h-64 w-64" alt="QR Code" src="{dataString}" />
 			{:catch error}
-				<p style="color: red">{error.message}</p>
+				<Alert alertType="error" message={error.message} />
 			{/await}
 		</div>
 
