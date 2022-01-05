@@ -1,24 +1,31 @@
-<script>
+<script lang="ts">
   /**
    * The action (function) the button has to perform.
    *
    * @public
-   * @type {!function}
    */
-  export let action;
+    // eslint-disable-next-line @typescript-eslint/ban-types
+  export let action:Function;
 
   /**
    * @public
-   * @type {!string}
    */
-  export let buttonText;
+  export let buttonText:string;
+
+  /**
+   * Optional Tailwindcss classes for colors, etc.
+   *
+   * @public
+   * @type {string}
+   */
+  export let colorStyles = 'bg-tundra hover:bg-greyish text-snow';
 </script>
 
 <button
   type="button"
-  class="bg-tundra hover:bg-greyish text-snow font-bold py-2 px-4 rounded inline-flex items-center"
+  class="{colorStyles} font-bold py-2 px-4 rounded inline-flex items-center"
   on:click={action}
 >
-  <slot></slot>
+  <slot />
   {buttonText}
 </button>
