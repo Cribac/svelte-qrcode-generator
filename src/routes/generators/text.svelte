@@ -1,4 +1,5 @@
 <script>
+	import LoadingIndicator from '../../components/LoadingIndicator.svelte';
 	import QRCode from 'qrcode';
 
 	let text = '';
@@ -30,9 +31,6 @@
 		bind:value={text}
 	></textarea>
 
-	<p>text: {text}</p>
-	<p>stringdata: {stringdata}</p>
-
 	{#if text.length > 0}
 		<button
 			type="button"
@@ -42,13 +40,15 @@
 		</button>
 	{/if}
 
-	{#if generateOk && text.length === 0}
-		{#await generateQr(stringdata)}
-			<div>generating...</div>
-		{:then dataString}
-			<img alt="QR Code" src="{dataString}" />
-		{:catch error}
-			<p style="color: red">{error.message}</p>
-		{/await}
-	{/if}
+	<div class="flex mt-4 h-64 w-64">
+		{#if generateOk && text.length === 0}
+			{#await generateQr(stringdata)}
+				<LoadingIndicator text="generating..."/>
+			{:then dataString}
+				<img alt="QR Code" src="{dataString}" />
+			{:catch error}
+				<p style="color: red">{error.message}</p>
+			{/await}
+		{/if}
+	</div>
 </div>
