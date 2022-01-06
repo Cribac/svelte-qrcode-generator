@@ -10,7 +10,7 @@ test('Button render default', () => {
 			action: () => { return true; },
 			buttonText: 'Action Button',
 		};
-		const { getByRole}  = render(ActionButton, buttonProps);
+		const { getByRole} = render(ActionButton, buttonProps);
 		const button = getByRole('button');
 		expect(button).toBeVisible();
 		expect(button).toHaveTextContent('Action Button');
@@ -27,7 +27,7 @@ test('Action is fired on button click', async () => {
 			action: mutRnd,
 			buttonText: 'Action Button',
 		};
-		const { getByRole}  = render(ActionButton, buttonProps);
+		const { getByRole} = render(ActionButton, buttonProps);
 		const button = getByRole('button');
 		expect(button).toBeVisible();
 		expect(button).toHaveTextContent('Action Button');
