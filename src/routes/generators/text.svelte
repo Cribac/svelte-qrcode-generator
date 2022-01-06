@@ -3,10 +3,11 @@
 	import Alert from '../../components/Alert.svelte';
 	import ActionButton from '../../components/ui/ActionButton.svelte';
 	import DownloadButton from '../../components/ui/DownloadButton.svelte';
+	import Validator from 'validator';
 	import QRCode from 'qrcode';
 
 	/**
-	 * Binding of the text inserted into the texarea by the user.
+	 * The text inserted into the textarea by the user.
 	 *
 	 * @type {string}
 	 */
@@ -49,12 +50,17 @@
 		error = '';
 	}
 
+	function sanitizeInput(text) {
+		const sanitized = Validator.escape(text);
+		return Validator.trim(sanitized);
+	}
+
 	async function generateQrCode(text) {
 		loading = true;
 		try {
 			const txt = JSON.stringify(text);
 			resetInputs();
-			encodedData = await QRCode.toDataURL(txt);
+			encodedData = await QRCode.toDataURL(sanitizeInput(txt));
 			if (encodedData) { // TODO: there has to be a better way to track loading state
 				loading = false;
 			}
