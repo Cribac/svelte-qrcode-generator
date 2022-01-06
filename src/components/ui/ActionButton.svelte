@@ -23,7 +23,7 @@
 
 <button
   type="button"
-  class="{colorStyles} font-bold py-2 px-4 rounded inline-flex items-center"
+  class="{colorStyles} font-bold py-2 px-4 rounded inline-flex w-full items-center"
   on:click={action}
 >
   <slot />
