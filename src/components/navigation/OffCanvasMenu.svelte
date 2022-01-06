@@ -15,7 +15,7 @@
 	 *
 	 * @type {!boolean}
 	 */
-	$: isActive = (route) => (route.path===$page.path);
+	$: isActive = (route) => (route.path===$page.url.pathname);
 
 	/**
 	 * Function to set the toggled state.
@@ -24,7 +24,7 @@
 	 */
 	// eslint-disable-next-line no-undef
 	function handleToggled(route:Route):void {
-		toggled = (route.path===$page.path);
+		toggled = (route.path===$page.url.pathname);
 	}
 </script>
 
