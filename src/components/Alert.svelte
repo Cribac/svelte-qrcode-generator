@@ -55,6 +55,13 @@
 </script>
 
 <div class="{getTypeClass(alertType)} border-l-4 text-midnight p-4" role="alert">
-  <p class="font-bold">{getTypeLabel(alertType)}</p>
-  <p>{message}</p>
+  <div class="flex flex-col sm:flex-row justify-between">
+    <div class="flex-grow">
+      <p class="font-bold">{getTypeLabel(alertType)}</p>
+      <p class="pb-2">{message}</p>
+    </div>
+    <div class="flex-grow-0">
+      <slot name="button"></slot>
+    </div>
+  </div>
 </div>
