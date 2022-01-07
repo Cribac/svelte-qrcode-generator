@@ -4,4 +4,5 @@
 export const routes:Route[] = [
 	{ path: '/', text: 'Home' },
 	{ path: '/generators/text', text: 'Textinput' },
+	{ path: '/generators/url', text: 'Url' },
 ];
