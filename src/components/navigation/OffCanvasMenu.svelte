@@ -45,7 +45,7 @@
 					</li>
 				{:else}
 					<li
-						class="px-2 py-3 hover:bg-snow hover:border-t hover:border-solid hover:border-midnight group"
+						class="px-2 py-3 hover:bg-snow hover:border-y first:hover:border-none hover:border-solid hover:border-midnight group"
 						on:click={() => handleToggled(route)}
 					>
 						<OffCanvasMenuItem {route} />
