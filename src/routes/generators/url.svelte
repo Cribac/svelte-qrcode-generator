@@ -45,6 +45,12 @@
   let loading = false;
 
   /**
+   * Copy of the entered url used as a preview/review for the user.
+   */
+  let urlPreview: string;
+
+
+  /**
    * Reactive flag to check if the url is valid.
    *
    * @type {boolean}
@@ -73,6 +79,7 @@
       resetInputs();
       encodedUrl = await QRCode.toDataURL(text);
       if (encodedUrl) {
+        urlPreview = text;
         loading = false;
       }
     } catch (err) {
@@ -133,6 +140,11 @@
 {#if encodedUrl}
   <div class="flex mt-4">
     <img class="h-64 w-64" alt="QR Code" src={encodedUrl} />
+    <div>
+      <code>
+        {urlPreview}
+      </code>
+    </div>
   </div>
 {/if}
 
