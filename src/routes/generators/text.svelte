@@ -35,6 +35,11 @@
 	let loading = false;
 
 	/**
+	 * Copy of the entered test used as a preview/review for the user.
+	 */
+	let textPreview: string;
+
+	/**
 	 * Reactive flag to check if the QRCode  generation was successful.
 	 */
 	$: generateOk = ((encodedData && encodedData.length > 0) && text.length === 0);
@@ -60,6 +65,7 @@
 			resetInputs();
 			encodedData = await QRCode.toDataURL(sanitizeInput(txt));
 			if (encodedData) { // TODO: there has to be a better way to track loading state
+				textPreview = txt;
 				loading = false;
 			}
 		} catch (err) {
@@ -72,7 +78,7 @@
 <p>TEXT</p>
 <div class="flex flex-col">
 	<label for="input-text">
-		Please input your text
+		Please enter your text
 	</label>
 	<textarea
 		id="input-text"
@@ -112,6 +118,11 @@
 	{#if generateOk}
 		<div class="flex mt-4">
 			<img class="h-64 w-64" alt="QR Code" src={encodedData} />
+			<div>
+				<code>
+					{textPreview}
+				</code>
+			</div>
 		</div>
 
 		<div class="flex flex-col sm:flex-row justify-between">
