@@ -61,13 +61,13 @@
   /**
    * Reset all textual data.
    */
-  function resetInputs():void {
+  function resetInputs(): void {
     url = '';
     encodedUrl = '';
     error = '';
   }
 
-  async function generateQrCode(text):Promise<void> {
+  async function generateQrCode(text: string): Promise<void> {
     loading = true;
     try {
       resetInputs();

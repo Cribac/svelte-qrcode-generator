@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import LoadingIndicator from '../../components/LoadingIndicator.svelte';
 	import Alert from '../../components/Alert.svelte';
 	import ActionButton from '../../components/ui/ActionButton.svelte';
@@ -36,26 +36,26 @@
 
 	/**
 	 * Reactive flag to check if the QRCode  generation was successful.
-	 *
-	 * @type {boolean}
 	 */
-	$: generateOk = ((encodedData && encodedData.length > 0) && text.length === 0);
+	$: generateOk = (): boolean => {
+		return (encodedData && encodedData.length > 0) && text.length === 0
+	};
 
 	/**
 	 * Reset all textual data.
 	 */
-	function resetInputs() {
+	function resetInputs(): void {
 		text = '';
 		encodedData = '';
 		error = '';
 	}
 
-	function sanitizeInput(text) {
+	function sanitizeInput(text: string): string {
 		const sanitized = Validator.escape(text);
 		return Validator.trim(sanitized);
 	}
 
-	async function generateQrCode(text) {
+	async function generateQrCode(text: string): Promise<void> {
 		loading = true;
 		try {
 			const txt = JSON.stringify(text);

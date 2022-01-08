@@ -12,10 +12,9 @@
 
 	/**
 	 * Reactive property to check if menu items are active.
-	 *
-	 * @type {!boolean}
 	 */
-	$: isActive = (route) => (route.path===$page.url.pathname);
+	// eslint-disable-next-line no-undef
+	$: isActive = (route: Route): boolean => (route.path===$page.url.pathname);
 
 	/**
 	 * Function to set the toggled state.
@@ -23,7 +22,7 @@
 	 * @param route {Route}
 	 */
 	// eslint-disable-next-line no-undef
-	function handleToggled(route:Route):void {
+	function handleToggled(route: Route): void {
 		toggled = (route.path===$page.url.pathname);
 	}
 </script>
@@ -41,7 +40,7 @@
 			{#each routes as route}
 				{#if isActive(route)}
 					<li class="px-2 py-3 bg-snow">
-						<OffCanvasMenuItem {route} isActive=true />
+						<OffCanvasMenuItem {route} isActive={true} />
 					</li>
 				{:else}
 					<li

@@ -5,7 +5,7 @@
    * @public
    */
     // eslint-disable-next-line @typescript-eslint/ban-types
-  export let action:Function;
+  export let action: Function;
 
   /**
    * @public
@@ -24,7 +24,7 @@
 <button
   type="button"
   class="{colorStyles} font-bold py-2 px-4 rounded inline-flex w-full items-center"
-  on:click={action}
+  on:click={action()}
 >
   <slot />
   {buttonText}
