@@ -10,3 +10,9 @@ type SupportedTypesMap = {
 	warning: { label: string, class: string }
 	info: { label: string, class: string }
 }
+
+type UrlValidatorOptions = {
+	protocols: string[]
+	require_protocol: boolean
+	require_valid_protocol: boolean
+}

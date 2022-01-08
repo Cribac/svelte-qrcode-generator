@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import LoadingIndicator from '../../components/LoadingIndicator.svelte';
   import Alert from '../../components/Alert.svelte';
   import ActionButton from '../../components/ui/ActionButton.svelte';
@@ -8,10 +8,9 @@
 
   /**
    * Options to pass into the validator's isURL method.
-   *
-   * @type {{require_valid_protocol: boolean, require_protocol: boolean, protocols: string[]}}
    */
-  const urlValidatorOptions = {
+    // eslint-disable-next-line no-undef
+  const urlValidatorOptions: UrlValidatorOptions = {
     protocols: ['http', 'https'],
     require_protocol: true,
     require_valid_protocol: true,
@@ -62,13 +61,13 @@
   /**
    * Reset all textual data.
    */
-  function resetInputs() {
+  function resetInputs():void {
     url = '';
     encodedUrl = '';
     error = '';
   }
 
-  async function generateQrCode(text) {
+  async function generateQrCode(text):Promise<void> {
     loading = true;
     try {
       resetInputs();
