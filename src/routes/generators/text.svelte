@@ -37,9 +37,7 @@
 	/**
 	 * Reactive flag to check if the QRCode  generation was successful.
 	 */
-	$: generateOk = (): boolean => {
-		return (encodedData && encodedData.length > 0) && text.length === 0
-	};
+	$: generateOk = ((encodedData && encodedData.length > 0) && text.length === 0);
 
 	/**
 	 * Reset all textual data.
