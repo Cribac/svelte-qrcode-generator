@@ -84,7 +84,7 @@
 	<textarea
 		id="input-text"
 		type="text"
-		class="flex-grow h-64 p-2"
+		class="flex-grow bg-white border border-solid border-greyish rounded h-64 p-2"
 		bind:value={text}
 	></textarea>
 

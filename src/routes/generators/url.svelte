@@ -98,7 +98,7 @@
   <input
     id="input-url"
     type="text"
-    class="flex-grow p-2"
+    class="flex-grow bg-white border border-solid border-greyish rounded p-2"
     placeholder="http://www.example.com"
     bind:value={url}
   />
