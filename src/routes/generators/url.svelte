@@ -3,6 +3,7 @@
   import Alert from '../../components/Alert.svelte';
   import ActionButton from '../../components/ui/ActionButton.svelte';
   import DownloadButton from '../../components/ui/DownloadButton.svelte';
+  import QrCodeDisplay from '../../components/QrCodeDisplay.svelte';
   import Validator from 'validator';
   import QRCode from 'qrcode';
 
@@ -138,14 +139,12 @@
 {/if}
 
 {#if encodedUrl}
-  <div class="flex mt-4">
+  <QrCodeDisplay>
     <img class="h-64 w-64" alt="QR Code" src={encodedUrl} />
-    <div>
-      <code>
-        {urlPreview}
-      </code>
-    </div>
-  </div>
+    <code>
+      {urlPreview}
+    </code>
+  </QrCodeDisplay>
 {/if}
 
 <div class="flex flex-col sm:flex-row justify-between">
