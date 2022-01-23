@@ -1,10 +1,10 @@
 <script lang="ts">
-	import PageHeader from '../../components/layout/PageHeader.svelte';
 	import LoadingIndicator from '../../components/LoadingIndicator.svelte';
 	import Alert from '../../components/Alert.svelte';
 	import ActionButton from '../../components/ui/ActionButton.svelte';
 	import DownloadButton from '../../components/ui/DownloadButton.svelte';
-	import QrCodeDisplay from '../../components/QrCodeDisplay.svelte';
+	import PageHeader from '../../components/layout/PageHeader.svelte';
+	import QrCodeDisplay from '../../components/layout/QrCodeDisplay.svelte';
 	import Validator from 'validator';
 	import QRCode from 'qrcode';
 
