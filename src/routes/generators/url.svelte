@@ -1,4 +1,5 @@
 <script lang="ts">
+  import PageHeader from '../../components/layout/PageHeader.svelte';
   import LoadingIndicator from '../../components/LoadingIndicator.svelte';
   import Alert from '../../components/Alert.svelte';
   import ActionButton from '../../components/ui/ActionButton.svelte';
@@ -90,7 +91,8 @@
   }
 </script>
 
-<p>URL</p>
+<PageHeader>Url</PageHeader>
+
 <div class="flex flex-col">
   <label for="input-url">
     Please enter your url
