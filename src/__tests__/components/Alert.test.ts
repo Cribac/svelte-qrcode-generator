@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import Alert from '../../components/Alert.svelte';
+import Alert from '$lib/components/Alert.svelte';
 import { render } from '@testing-library/svelte';
 
 test('Alert for error type', () => {

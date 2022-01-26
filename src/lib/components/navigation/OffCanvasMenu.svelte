@@ -1,6 +1,6 @@
 <script lang="ts">
-	import OffCanvasMenuItem from './OffCanvasMenuItem.svelte';
-	import { routes } from '../../routes/routes';
+	import OffCanvasMenuItem from '$lib/components/navigation/OffCanvasMenuItem.svelte';
+	import { routes } from '../../../routes/routes';
 	import { page } from '$app/stores';
 
 	/**

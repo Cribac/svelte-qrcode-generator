@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import ActionButton from '../../../components/ui/ActionButton.svelte';
+import ActionButton from '$lib/components/ui/ActionButton.svelte';
 import { render, fireEvent } from '@testing-library/svelte';
 
 test('Button render default', () => {

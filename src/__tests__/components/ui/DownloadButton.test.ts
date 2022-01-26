@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import DownloadButton from '../../../components/ui/DownloadButton.svelte';
+import DownloadButton from '$lib/components/ui/DownloadButton.svelte';
 import { render } from '@testing-library/svelte';
 
 test('Button render default', () => {
